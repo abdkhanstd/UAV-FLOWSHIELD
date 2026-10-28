@@ -130,7 +130,8 @@ def main_floats():
 SAME_LABEL = {"tab:ladder", "tab:params", "tab:admission", "tab:t2", "tab:t3h", "tab:costmodel"}
 
 # supplement figures that redraw what the main paper shows: supplement label -> (main label, panel)
-SAME_CONTENT = {"fig:privacy-curves": ("fig:priv", "a"), "fig:frontier": ("fig:priv", "c"), "fig:matched": ("tab:matched", ""), "fig:heat": ("tab:goal", "")}
+SAME_CONTENT = {"fig:privacy-curves": ("fig:priv", "a"), "fig:frontier": ("fig:priv", "c"), "fig:matched": ("tab:matched", ""), "fig:heat": ("tab:goal", ""),
+                "fig:attacker": ("fig:privcost", "a"), "fig:pareto": ("fig:privcost", "b")}
 
 
 def drop_duplicates(body):
@@ -340,6 +341,22 @@ def copy_figs(figs):
         shutil.copy(os.path.join(PAPER, "figs", name), os.path.join(OUT, "figs", name))
 
 
+def prune_figs():
+    """Delete figure files that neither main.tex nor supplementary.tex uses (for example floats dropped as duplicates)."""
+    used = set()
+    for t in ("main.tex", "supplementary.tex"):
+        p = os.path.join(OUT, t)
+        if os.path.exists(p):
+            src = open(p, encoding="utf-8").read()
+            used |= set(re.findall(r"\\includegraphics(?:\[[^]]*\])?\{([^}]+)\}", src))
+            for args in re.findall(r"\\threefig\{([^}]*)\}\{([^}]*)\}\{([^}]*)\}", src):
+                used |= set(args)
+    used = {os.path.basename(f) if f.endswith((".pdf", ".png")) else os.path.basename(f) + ".pdf" for f in used}
+    for name in os.listdir(os.path.join(OUT, "figs")):
+        if name not in used:
+            os.remove(os.path.join(OUT, "figs", name))
+
+
 if __name__ == "__main__":
     os.makedirs(OUT, exist_ok=True)
     M = macros()
@@ -359,4 +376,5 @@ if __name__ == "__main__":
     else:
         figs = build_main(M)
     copy_figs(figs)
+    prune_figs()
     print(what, "written;", len(M), "numbers; figures:", sorted(figs))

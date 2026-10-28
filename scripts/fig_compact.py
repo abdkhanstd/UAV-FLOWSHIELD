@@ -232,7 +232,110 @@ def ttl():
     save(fig, "c_ttl.pdf")
 
 
+# ------------------------------------------------------------------ attacker and cost row
+def attacker():
+    A = load("results", "attacker.json")
+    S = A["scales"]
+    fig, ax = new()
+    for key, lab, ls in (("strong", "with ICP", "-o"), ("weak", "short base, no ICP", "--s")):
+        ax.plot(S, [100 * np.mean([x["res"][str(s)][key] for x in A["results"]]) for s in S], ls, color=C["blue"] if key == "strong" else C["grey"],
+                label=lab, ms=2.4)
+    ax.set_xscale("log")
+    ax.set_xticks(S)
+    ax.set_xticklabels([str(s) for s in S])
+    ax.minorticks_off()
+    ax.set_xlabel("noise scale (m)")
+    ax.set_ylabel("sites re-identified (%)")
+    ax.legend(loc="upper right")
+    save(fig, "c_attacker.pdf")
+
+
+def pareto():
+    R = load("results", "eval", "summary_priv_ta.json")["rows"]
+    fx = [p for p in R if p.startswith("fixed")]
+    fig, ax = new()
+    ax.plot([100 * R[p]["site"]["all"][0] for p in fx], [100 * R[p]["subopt"][0] for p in fx], "-o", color=C["grey"], ms=2.2, label="fixed")
+    for p, lab, col, mk in (("ucb10", "Wilson", C["green"], "D"), ("pc05", "table", C["blue"], "s"), ("mean05", "mean", C["red"], "^")):
+        ax.plot([100 * R[p]["site"]["all"][0]], [100 * R[p]["subopt"][0]], mk, color=col, ms=3.2, label=lab)
+    ax.legend(loc="upper right")
+    ax.set_xlabel("sites re-identified (%)")
+    ax.set_ylabel("suboptimal tours (%)")
+    ax.set_xlim(0, 26)
+    save(fig, "c_pareto.pdf")
+
+
+def region():
+    M = macros("numbers_p5.tex")
+    cats = [("100", "FixA"), ("300", "FixB"), ("600", "FixC"), ("cal", "Ucb"), ("tab", "Tab"), ("none", "Chance")]
+    x = np.arange(len(cats))
+    one = [float(M[f"reg{k}OneKm"]) for _, k in cats]
+    five = [float(M[f"reg{k}FiveKm"]) for _, k in cats]
+    fig, ax = new()
+    ax.bar(x - 0.2, one, 0.4, color=C["blue"], label="within 1 km")
+    ax.bar(x + 0.2, five, 0.4, color=C["orange"], label="within 5 km")
+    ax.set_xticks(x)
+    ax.set_xticklabels([c for c, _ in cats], fontsize=5.4)
+    ax.set_ylabel("centroid located (%)")
+    ax.set_ylim(0, 40)
+    ax.legend(loc="upper right")
+    ax.grid(axis="x", visible=False)
+    save(fig, "c_region.pdf")
+
+
+# ------------------------------------------------------------------ robustness row
+def edge():
+    M = macros("numbers_netedge_tb.tex")
+    cats = [("1.7B", "QwenSmall"), ("3B", "Granite"), ("4B", "Nemo"), ("8B", "QwenEight"), ("12B", "Same")]
+    x = np.arange(len(cats))
+    fig, ax = new()
+    ax.bar(x - 0.2, [float(M[f"EdgeRecall{k}"]) for _, k in cats], 0.4, color=C["blue"], label="effects recovered")
+    ax.bar(x + 0.2, [float(M[f"EdgeMcr{k}"]) for _, k in cats], 0.4, color=C["green"], label="completed")
+    ax.plot(x, [float(M[f"EdgeAsr{k}"]) for _, k in cats], "x", color=C["red"], ms=3.5, label="injections executed")
+    ax.set_xticks(x)
+    ax.set_xticklabels([c for c, _ in cats])
+    ax.set_xlabel("edge extractor")
+    ax.set_ylabel("share (%)")
+    ax.set_ylim(-4, 168)
+    ax.set_yticks([0, 50, 100])
+    ax.legend(loc="upper left", ncol=1, fontsize=5.2)
+    ax.grid(axis="x", visible=False)
+    save(fig, "c_edge.pdf")
+
+
+def netloss():
+    M = macros("numbers_netedge_tb.tex")
+    keys = [(0, "Zero"), (10, "OnePct"), (30, "ThreePct"), (50, "FivePct"), (100, "All")]
+    xs = [k for k, _ in keys]
+    fig, ax = new()
+    ax.plot(xs, [float(M[f"netMcrHold{k}"]) for _, k in keys], "-o", color=C["orange"], label="hold")
+    ax.plot(xs, [float(M[f"netMcrFall{k}"]) for _, k in keys], "-s", color=C["blue"], label="verified fallback")
+    ax.set_xlabel("requests lost (%)")
+    ax.set_ylabel("missions completed (%)")
+    ax.set_ylim(-4, 104)
+    ax.legend(loc="lower left")
+    save(fig, "c_netloss.pdf")
+
+
+def sampling():
+    M = macros("numbers_samp_tb.tex")
+    meths = [("undef.", "Undef"), ("PRV", "Prv"), ("PEP+", "PepRepDel"), ("FS", "Fs")]
+    x = np.arange(len(meths))
+    fig, ax = new()
+    for off, key, col, lab in ((-0.2, "Asr", C["grey"], "injections"), (0.2, "Adapt", C["red"], "adaptive")):
+        ax.bar(x + off, [float(M[f"samp{key}{k}"]) for _, k in meths], 0.4, yerr=[float(M[f"samp{key}{k}Sd"]) for _, k in meths],
+               color=col, label=lab, error_kw={"elinewidth": 0.6, "capsize": 1.2})
+        ax.plot(x + off, [float(M[f"sampDet{key}{k}"]) for _, k in meths], "o", mfc="white", mec="k", ms=2.4, mew=0.6,
+                label="greedy" if key == "Adapt" else None)
+    ax.set_xticks(x)
+    ax.set_xticklabels([m for m, _ in meths])
+    ax.set_ylabel("executed (%)")
+    ax.set_ylim(0, 104)
+    ax.legend(loc="upper right")
+    ax.grid(axis="x", visible=False)
+    save(fig, "c_sampling.pdf")
+
+
 if __name__ == "__main__":
-    for f in (curves, calib, frontier, secmcr, common_boundary, final, wind, runtime, ttl):
+    for f in (curves, calib, frontier, secmcr, common_boundary, final, wind, runtime, ttl, attacker, pareto, region, edge, netloss, sampling):
         f()
     print("ok")
