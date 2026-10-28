@@ -1,0 +1,89 @@
+[
+ {
+  "label": "intact",
+  "accepted": 1057,
+  "violations": 0,
+  "detail": {}
+ },
+ {
+  "label": "no spatial envelope",
+  "accepted": 1058,
+  "violations": 432,
+  "detail": {
+   "envelope (router metric)": 432
+  }
+ },
+ {
+  "label": "straight-line envelope",
+  "accepted": 1057,
+  "violations": 3,
+  "detail": {
+   "envelope (router metric)": 3
+  }
+ },
+ {
+  "label": "no origin check",
+  "accepted": 1057,
+  "violations": 72,
+  "detail": {
+   "spatial task without a valid origin tag": 72
+  }
+ },
+ {
+  "label": "no loiter cap",
+  "accepted": 1057,
+  "violations": 400,
+  "detail": {
+   "loiter cap": 400
+  }
+ },
+ {
+  "label": "no altitude bound",
+  "accepted": 1084,
+  "violations": 77,
+  "detail": {
+   "alt obs": 55,
+   "altitude": 22
+  }
+ },
+ {
+  "label": "no number redaction",
+  "accepted": 1057,
+  "violations": 285,
+  "detail": {
+   "number not redacted": 285
+  }
+ },
+ {
+  "label": "coordinate targets allowed",
+  "accepted": 1085,
+  "violations": 28,
+  "detail": {
+   "target outside S, home, admitted point": 28
+  }
+ },
+ {
+  "label": "any channel may add spatial task",
+  "accepted": 1057,
+  "violations": 83,
+  "detail": {
+   "spatial task from non-portal channel": 83
+  }
+ },
+ {
+  "label": "peer may impose constraints",
+  "accepted": 1026,
+  "violations": 195,
+  "detail": {
+   "channel authority": 195
+  }
+ },
+ {
+  "label": "conflicting floors: last wins",
+  "accepted": 1077,
+  "violations": 20,
+  "detail": {
+   "altitude floor respected": 20
+  }
+ }
+]

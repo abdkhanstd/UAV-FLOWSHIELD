@@ -1,0 +1,37 @@
+[
+ {
+  "zones": 1,
+  "overlapping": false,
+  "triples": 5808,
+  "violations": 0,
+  "worst_excess_m": 0.0
+ },
+ {
+  "zones": 2,
+  "overlapping": false,
+  "triples": 5644,
+  "violations": 0,
+  "worst_excess_m": 0.0
+ },
+ {
+  "zones": 3,
+  "overlapping": false,
+  "triples": 5522,
+  "violations": 0,
+  "worst_excess_m": 0.0
+ },
+ {
+  "zones": 2,
+  "overlapping": true,
+  "triples": 5584,
+  "violations": 0,
+  "worst_excess_m": 0.0
+ },
+ {
+  "zones": 3,
+  "overlapping": true,
+  "triples": 5464,
+  "violations": 2,
+  "worst_excess_m": 11.399995006765948
+ }
+]

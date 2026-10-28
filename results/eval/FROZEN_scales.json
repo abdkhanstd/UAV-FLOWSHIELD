@@ -1,0 +1,14 @@
+{
+ "time": "2026-10-26 22:56:01",
+ "files": {
+  "data/scales_t2_ucb10.json": "09ffcb60bb066eab0038305b9ca12e866da6b2951317d4e2df57c4a1917f7e56",
+  "data/scales_t2_mean10.json": "3eed487b9e1a556e5b80f56bd2750fe2434e96a5003a08805d62865ae556b7fa",
+  "results/privacy3_t2_calib.json": "d7805b1368db6e9e1cb692a5296942ae56452b81b1c8755adef7b6d0341cb846",
+  "data/scales_t2.json": "09ffcb60bb066eab0038305b9ca12e866da6b2951317d4e2df57c4a1917f7e56",
+  "data/scales_t2_alt.json": "3eed487b9e1a556e5b80f56bd2750fe2434e96a5003a08805d62865ae556b7fa",
+  "data/scales_t2_mean05.json": "f11158debd642e29181c08b2f43758778b418b565435e07098328cf52529744d",
+  "results/privacy3_t2_calib_mean05.json": "59fbd90f2cb776ff90630e4bf87341a3b3728af89af367274cc535f45eec2b50"
+ },
+ "note": "scales_t2.json = scales_t2_ucb10.json (default candidate, copied at 23:49:08 before any T2 FlowShield result); scales_t2_alt.json = scales_t2_mean10.json (run as a labelled variant)",
+ "note2": "scales_t2_mean05.json computed at 01:13:39 on Oct 27, after the T1 held-out result selected the mean05 rule"
+}

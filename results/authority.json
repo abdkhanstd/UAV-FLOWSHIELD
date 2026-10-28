@@ -1,0 +1,96 @@
+{
+ "base": {
+  "sequences": 4000,
+  "steps": 28903,
+  "unsafe": 0,
+  "refused": 0
+ },
+ "mutants": {
+  "no_expiry": {
+   "sequences": 4000,
+   "steps": 28903,
+   "unsafe": 1292,
+   "refused": 0
+  },
+  "no_ttl_cap": {
+   "sequences": 4000,
+   "steps": 28903,
+   "unsafe": 1237,
+   "refused": 0
+  },
+  "no_single_use": {
+   "sequences": 4000,
+   "steps": 28903,
+   "unsafe": 1195,
+   "refused": 0
+  },
+  "no_revocation": {
+   "sequences": 4000,
+   "steps": 28903,
+   "unsafe": 435,
+   "refused": 0
+  },
+  "approval_unbound": {
+   "sequences": 4000,
+   "steps": 28903,
+   "unsafe": 282,
+   "refused": 85
+  },
+  "no_mission": {
+   "sequences": 4000,
+   "steps": 28903,
+   "unsafe": 513,
+   "refused": 207
+  },
+  "early_consume": {
+   "sequences": 4000,
+   "steps": 28903,
+   "unsafe": 0,
+   "refused": 139
+  }
+ },
+ "scenarios": {
+  "replay_1s": {
+   "tag_only": 500,
+   "semantics": 0,
+   "n": 500
+  },
+  "replay_1h": {
+   "tag_only": 500,
+   "semantics": 0,
+   "n": 500
+  },
+  "revoked": {
+   "tag_only": 500,
+   "semantics": 0,
+   "n": 500
+  },
+  "other_mission": {
+   "tag_only": 0,
+   "semantics": 0,
+   "n": 500
+  },
+  "approval_other_action": {
+   "tag_only": 500,
+   "semantics": 0,
+   "n": 500
+  },
+  "no_approval": {
+   "tag_only": 500,
+   "semantics": 0,
+   "n": 500
+  }
+ },
+ "availability": {
+  "30": 0.6556,
+  "60": 0.8642,
+  "120": 0.9622,
+  "300": 0.9964,
+  "600": 0.9994,
+  "900": 1.0
+ },
+ "params": {
+  "skew": 5.0,
+  "ttl_max": 900.0
+ }
+}

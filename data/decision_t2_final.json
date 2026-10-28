@@ -1,0 +1,1895 @@
+{
+"rule": "certified (blind registration, T=100, alpha=0.05) and scale <= 400 m",
+"missions": {
+"F0000": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0001": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0014": {
+"scale": 10,
+"certified": true,
+"release": true
+},
+"F0016": {
+"scale": 10,
+"certified": true,
+"release": true
+},
+"F0018": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0019": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0022": {
+"scale": 10,
+"certified": true,
+"release": true
+},
+"F0028": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0031": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0036": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0049": {
+"scale": 25,
+"certified": true,
+"release": true
+},
+"F0055": {
+"scale": 25,
+"certified": true,
+"release": true
+},
+"F0060": {
+"scale": 25,
+"certified": true,
+"release": true
+},
+"F0062": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0066": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0071": {
+"scale": 10,
+"certified": true,
+"release": true
+},
+"F0076": {
+"scale": 25,
+"certified": true,
+"release": true
+},
+"F0090": {
+"scale": 10,
+"certified": true,
+"release": true
+},
+"F0097": {
+"scale": 25,
+"certified": true,
+"release": true
+},
+"F0099": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0102": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0105": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0110": {
+"scale": 10,
+"certified": true,
+"release": true
+},
+"F0119": {
+"scale": 25,
+"certified": true,
+"release": true
+},
+"F0120": {
+"scale": 10,
+"certified": true,
+"release": true
+},
+"F0121": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0130": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0133": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0134": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0135": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0145": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0146": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0149": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0151": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0152": {
+"scale": 25,
+"certified": true,
+"release": true
+},
+"F0163": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0164": {
+"scale": 25,
+"certified": true,
+"release": true
+},
+"F0179": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0209": {
+"scale": 10,
+"certified": true,
+"release": true
+},
+"F0221": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0223": {
+"scale": 25,
+"certified": true,
+"release": true
+},
+"F0229": {
+"scale": 25,
+"certified": true,
+"release": true
+},
+"F0232": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0233": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0235": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0240": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0247": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0249": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0254": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0256": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0263": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0269": {
+"scale": 10,
+"certified": true,
+"release": true
+},
+"F0270": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0272": {
+"scale": 25,
+"certified": true,
+"release": true
+},
+"F0284": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0289": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0293": {
+"scale": 25,
+"certified": true,
+"release": true
+},
+"F0303": {
+"scale": 10,
+"certified": true,
+"release": true
+},
+"F0305": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0308": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0309": {
+"scale": 10,
+"certified": true,
+"release": true
+},
+"F0311": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0316": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0320": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0324": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0327": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0329": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0338": {
+"scale": 25,
+"certified": true,
+"release": true
+},
+"F0342": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0343": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0344": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0347": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0351": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0355": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0359": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0376": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0013": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0015": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0025": {
+"scale": 10,
+"certified": true,
+"release": true
+},
+"F0034": {
+"scale": 25,
+"certified": true,
+"release": true
+},
+"F0040": {
+"scale": 10,
+"certified": true,
+"release": true
+},
+"F0045": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0046": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0052": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0056": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0058": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0061": {
+"scale": 25,
+"certified": true,
+"release": true
+},
+"F0067": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0072": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0084": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0088": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0093": {
+"scale": 25,
+"certified": true,
+"release": true
+},
+"F0101": {
+"scale": 10,
+"certified": true,
+"release": true
+},
+"F0103": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0108": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0111": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0129": {
+"scale": 25,
+"certified": true,
+"release": true
+},
+"F0132": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0136": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0150": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0155": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0171": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0176": {
+"scale": 25,
+"certified": true,
+"release": true
+},
+"F0182": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0183": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0185": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0186": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0187": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0194": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0199": {
+"scale": 25,
+"certified": true,
+"release": true
+},
+"F0203": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0210": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0212": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0214": {
+"scale": 25,
+"certified": true,
+"release": true
+},
+"F0217": {
+"scale": 10,
+"certified": true,
+"release": true
+},
+"F0226": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0230": {
+"scale": 10,
+"certified": true,
+"release": true
+},
+"F0236": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0244": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0245": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0250": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0251": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0253": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0274": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0283": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0295": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0297": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0298": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0301": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0319": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0326": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0328": {
+"scale": 10,
+"certified": true,
+"release": true
+},
+"F0330": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0333": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0336": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0361": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0362": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0364": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0365": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0367": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0377": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0002": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0012": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0020": {
+"scale": 300,
+"certified": true,
+"release": true
+},
+"F0024": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0029": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0033": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0038": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0042": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0044": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0048": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0053": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0054": {
+"scale": 300,
+"certified": true,
+"release": true
+},
+"F0065": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0069": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0077": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0078": {
+"scale": 200,
+"certified": true,
+"release": true
+},
+"F0082": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0085": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0100": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0104": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0107": {
+"scale": 200,
+"certified": true,
+"release": true
+},
+"F0112": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0123": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0128": {
+"scale": 25,
+"certified": true,
+"release": true
+},
+"F0138": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0141": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0144": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0154": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0158": {
+"scale": 200,
+"certified": true,
+"release": true
+},
+"F0159": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0169": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0173": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0180": {
+"scale": 200,
+"certified": true,
+"release": true
+},
+"F0190": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0193": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0195": {
+"scale": 400,
+"certified": true,
+"release": true
+},
+"F0198": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0200": {
+"scale": 200,
+"certified": true,
+"release": true
+},
+"F0206": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0213": {
+"scale": 200,
+"certified": true,
+"release": true
+},
+"F0218": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0224": {
+"scale": 300,
+"certified": true,
+"release": true
+},
+"F0228": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0231": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0237": {
+"scale": 300,
+"certified": true,
+"release": true
+},
+"F0238": {
+"scale": 300,
+"certified": true,
+"release": true
+},
+"F0239": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0241": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0242": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0243": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0246": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0248": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0260": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0261": {
+"scale": 200,
+"certified": true,
+"release": true
+},
+"F0276": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0277": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0281": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0282": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0288": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0294": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0306": {
+"scale": 300,
+"certified": true,
+"release": true
+},
+"F0315": {
+"scale": 300,
+"certified": true,
+"release": true
+},
+"F0317": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0337": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0341": {
+"scale": 200,
+"certified": true,
+"release": true
+},
+"F0346": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0352": {
+"scale": 300,
+"certified": true,
+"release": true
+},
+"F0353": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0369": {
+"scale": 200,
+"certified": true,
+"release": true
+},
+"F0371": {
+"scale": 400,
+"certified": true,
+"release": true
+},
+"F0372": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0374": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0375": {
+"scale": 200,
+"certified": true,
+"release": true
+},
+"F0010": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0035": {
+"scale": 300,
+"certified": true,
+"release": true
+},
+"F0039": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0047": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0050": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0070": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0073": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0080": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0081": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0087": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0089": {
+"scale": 200,
+"certified": true,
+"release": true
+},
+"F0092": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0094": {
+"scale": 200,
+"certified": true,
+"release": true
+},
+"F0096": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0098": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0114": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0116": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0117": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0126": {
+"scale": 25,
+"certified": true,
+"release": true
+},
+"F0127": {
+"scale": 25,
+"certified": true,
+"release": true
+},
+"F0137": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0139": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0140": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0142": {
+"scale": 200,
+"certified": true,
+"release": true
+},
+"F0148": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0178": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0184": {
+"scale": 25,
+"certified": true,
+"release": true
+},
+"F0192": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0196": {
+"scale": 25,
+"certified": true,
+"release": true
+},
+"F0204": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0207": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0215": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0216": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0220": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0259": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0265": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0266": {
+"scale": 25,
+"certified": true,
+"release": true
+},
+"F0268": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0285": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0287": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0291": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0292": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0296": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0300": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0321": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0325": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0331": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0334": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0339": {
+"scale": 50,
+"certified": true,
+"release": true
+},
+"F0345": {
+"scale": 25,
+"certified": true,
+"release": true
+},
+"F0350": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0356": {
+"scale": 200,
+"certified": true,
+"release": true
+},
+"F0357": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0370": {
+"scale": 75,
+"certified": true,
+"release": true
+},
+"F0003": {
+"scale": 400,
+"certified": true,
+"release": true
+},
+"F0004": {
+"scale": 600,
+"certified": true,
+"release": false
+},
+"F0005": {
+"scale": 600,
+"certified": true,
+"release": false
+},
+"F0006": {
+"scale": 800,
+"certified": false,
+"release": false
+},
+"F0007": {
+"scale": 300,
+"certified": true,
+"release": true
+},
+"F0011": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0023": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0032": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0041": {
+"scale": 400,
+"certified": true,
+"release": true
+},
+"F0063": {
+"scale": 300,
+"certified": true,
+"release": true
+},
+"F0068": {
+"scale": 600,
+"certified": true,
+"release": false
+},
+"F0075": {
+"scale": 300,
+"certified": true,
+"release": true
+},
+"F0079": {
+"scale": 300,
+"certified": true,
+"release": true
+},
+"F0083": {
+"scale": 800,
+"certified": true,
+"release": false
+},
+"F0086": {
+"scale": 600,
+"certified": true,
+"release": false
+},
+"F0091": {
+"scale": 800,
+"certified": false,
+"release": false
+},
+"F0106": {
+"scale": 600,
+"certified": true,
+"release": false
+},
+"F0109": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0115": {
+"scale": 300,
+"certified": true,
+"release": true
+},
+"F0122": {
+"scale": 200,
+"certified": true,
+"release": true
+},
+"F0124": {
+"scale": 800,
+"certified": true,
+"release": false
+},
+"F0143": {
+"scale": 300,
+"certified": true,
+"release": true
+},
+"F0147": {
+"scale": 600,
+"certified": true,
+"release": false
+},
+"F0153": {
+"scale": 400,
+"certified": true,
+"release": true
+},
+"F0157": {
+"scale": 800,
+"certified": true,
+"release": false
+},
+"F0166": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0167": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0174": {
+"scale": 800,
+"certified": true,
+"release": false
+},
+"F0177": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0188": {
+"scale": 200,
+"certified": true,
+"release": true
+},
+"F0189": {
+"scale": 400,
+"certified": true,
+"release": true
+},
+"F0191": {
+"scale": 800,
+"certified": false,
+"release": false
+},
+"F0197": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0201": {
+"scale": 800,
+"certified": true,
+"release": false
+},
+"F0202": {
+"scale": 400,
+"certified": true,
+"release": true
+},
+"F0205": {
+"scale": 800,
+"certified": true,
+"release": false
+},
+"F0208": {
+"scale": 300,
+"certified": true,
+"release": true
+},
+"F0225": {
+"scale": 400,
+"certified": true,
+"release": true
+},
+"F0255": {
+"scale": 400,
+"certified": true,
+"release": true
+},
+"F0257": {
+"scale": 400,
+"certified": true,
+"release": true
+},
+"F0258": {
+"scale": 800,
+"certified": true,
+"release": false
+},
+"F0264": {
+"scale": 800,
+"certified": true,
+"release": false
+},
+"F0267": {
+"scale": 600,
+"certified": true,
+"release": false
+},
+"F0279": {
+"scale": 800,
+"certified": true,
+"release": false
+},
+"F0299": {
+"scale": 300,
+"certified": true,
+"release": true
+},
+"F0302": {
+"scale": 800,
+"certified": false,
+"release": false
+},
+"F0304": {
+"scale": 800,
+"certified": false,
+"release": false
+},
+"F0307": {
+"scale": 600,
+"certified": true,
+"release": false
+},
+"F0323": {
+"scale": 600,
+"certified": true,
+"release": false
+},
+"F0332": {
+"scale": 400,
+"certified": true,
+"release": true
+},
+"F0335": {
+"scale": 300,
+"certified": true,
+"release": true
+},
+"F0354": {
+"scale": 600,
+"certified": true,
+"release": false
+},
+"F0366": {
+"scale": 400,
+"certified": true,
+"release": true
+},
+"F0008": {
+"scale": 600,
+"certified": true,
+"release": false
+},
+"F0009": {
+"scale": 400,
+"certified": true,
+"release": true
+},
+"F0017": {
+"scale": 800,
+"certified": false,
+"release": false
+},
+"F0021": {
+"scale": 300,
+"certified": true,
+"release": true
+},
+"F0026": {
+"scale": 800,
+"certified": false,
+"release": false
+},
+"F0027": {
+"scale": 600,
+"certified": true,
+"release": false
+},
+"F0030": {
+"scale": 600,
+"certified": true,
+"release": false
+},
+"F0037": {
+"scale": 400,
+"certified": true,
+"release": true
+},
+"F0043": {
+"scale": 300,
+"certified": true,
+"release": true
+},
+"F0051": {
+"scale": 600,
+"certified": true,
+"release": false
+},
+"F0057": {
+"scale": 800,
+"certified": true,
+"release": false
+},
+"F0059": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0064": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0074": {
+"scale": 400,
+"certified": true,
+"release": true
+},
+"F0095": {
+"scale": 600,
+"certified": true,
+"release": false
+},
+"F0113": {
+"scale": 800,
+"certified": true,
+"release": false
+},
+"F0118": {
+"scale": 300,
+"certified": true,
+"release": true
+},
+"F0125": {
+"scale": 200,
+"certified": true,
+"release": true
+},
+"F0131": {
+"scale": 600,
+"certified": true,
+"release": false
+},
+"F0156": {
+"scale": 800,
+"certified": false,
+"release": false
+},
+"F0160": {
+"scale": 600,
+"certified": true,
+"release": false
+},
+"F0161": {
+"scale": 800,
+"certified": true,
+"release": false
+},
+"F0162": {
+"scale": 800,
+"certified": true,
+"release": false
+},
+"F0165": {
+"scale": 800,
+"certified": true,
+"release": false
+},
+"F0168": {
+"scale": 300,
+"certified": true,
+"release": true
+},
+"F0170": {
+"scale": 400,
+"certified": true,
+"release": true
+},
+"F0172": {
+"scale": 600,
+"certified": true,
+"release": false
+},
+"F0175": {
+"scale": 600,
+"certified": true,
+"release": false
+},
+"F0181": {
+"scale": 400,
+"certified": true,
+"release": true
+},
+"F0211": {
+"scale": 800,
+"certified": true,
+"release": false
+},
+"F0219": {
+"scale": 600,
+"certified": true,
+"release": false
+},
+"F0222": {
+"scale": 800,
+"certified": true,
+"release": false
+},
+"F0227": {
+"scale": 200,
+"certified": true,
+"release": true
+},
+"F0234": {
+"scale": 400,
+"certified": true,
+"release": true
+},
+"F0252": {
+"scale": 300,
+"certified": true,
+"release": true
+},
+"F0262": {
+"scale": 800,
+"certified": false,
+"release": false
+},
+"F0271": {
+"scale": 600,
+"certified": true,
+"release": false
+},
+"F0273": {
+"scale": 800,
+"certified": true,
+"release": false
+},
+"F0275": {
+"scale": 400,
+"certified": true,
+"release": true
+},
+"F0278": {
+"scale": 600,
+"certified": true,
+"release": false
+},
+"F0280": {
+"scale": 100,
+"certified": true,
+"release": true
+},
+"F0286": {
+"scale": 600,
+"certified": true,
+"release": false
+},
+"F0290": {
+"scale": 800,
+"certified": true,
+"release": false
+},
+"F0310": {
+"scale": 800,
+"certified": true,
+"release": false
+},
+"F0312": {
+"scale": 600,
+"certified": true,
+"release": false
+},
+"F0313": {
+"scale": 300,
+"certified": true,
+"release": true
+},
+"F0314": {
+"scale": 800,
+"certified": false,
+"release": false
+},
+"F0318": {
+"scale": 200,
+"certified": true,
+"release": true
+},
+"F0322": {
+"scale": 600,
+"certified": true,
+"release": false
+},
+"F0340": {
+"scale": 150,
+"certified": true,
+"release": true
+},
+"F0348": {
+"scale": 800,
+"certified": false,
+"release": false
+},
+"F0349": {
+"scale": 600,
+"certified": true,
+"release": false
+},
+"F0358": {
+"scale": 800,
+"certified": true,
+"release": false
+},
+"F0360": {
+"scale": 800,
+"certified": true,
+"release": false
+},
+"F0363": {
+"scale": 800,
+"certified": false,
+"release": false
+},
+"F0368": {
+"scale": 600,
+"certified": true,
+"release": false
+},
+"F0373": {
+"scale": 200,
+"certified": true,
+"release": true
+}
+}
+}

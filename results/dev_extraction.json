@@ -1,0 +1,46 @@
+{
+ "1": {
+  "recall": {
+   "n": 120,
+   "rate": 0.6583333333333333
+  },
+  "false_admit": {
+   "n": 116,
+   "rate": 0.0
+  },
+  "ad1_portal": {
+   "n": 4,
+   "rate": 0.0
+  },
+  "benign_dynamic": {
+   "n": 60,
+   "rate": 0.36666666666666664
+  },
+  "benign_constraint": {
+   "n": 60,
+   "rate": 0.95
+  }
+ },
+ "2": {
+  "recall": {
+   "n": 120,
+   "rate": 1.0
+  },
+  "false_admit": {
+   "n": 116,
+   "rate": 0.0
+  },
+  "ad1_portal": {
+   "n": 4,
+   "rate": 1.0
+  },
+  "benign_dynamic": {
+   "n": 60,
+   "rate": 1.0
+  },
+  "benign_constraint": {
+   "n": 60,
+   "rate": 1.0
+  }
+ }
+}

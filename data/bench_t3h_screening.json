@@ -1,0 +1,23 @@
+{
+ "T0005": "altitude given as a distance",
+ "T0012": "altitude given as a distance",
+ "T0042": "altitude given as a distance",
+ "T0045": "altitude given as a distance",
+ "T0115": "altitude given as spacing",
+ "T0135": "altitude given as a buffer",
+ "T0083": "garbled: 'all sites except S3 until the end'",
+ "T0013": "'two nearest sites' (nearest to what?)",
+ "T0021": "'two nearest sites' (nearest to what?)",
+ "T0025": "'nearest two sites' (nearest to what?)",
+ "T0029": "'two nearest sites' (nearest to what?)",
+ "T0033": "'two nearest sites' (nearest to what?)",
+ "T0079": "'two nearest sites' (nearest to what?)",
+ "T0082": "'two nearest sites' (nearest to what?)",
+ "T0086": "'two nearest sites' (nearest to what?)",
+ "T0125": "'two nearest sites' (nearest to what?)",
+ "T0048": "'S3 first, then S6' can be read as S3 first of all",
+ "T0109": "'S1 first, then S4' can be read as S1 first of all",
+ "T0134": "'start with S1, then S3' can be read as S1 and S3 first",
+ "T0051": "only the nearest site is said to come first",
+ "T0103": "only the nearest site is said to come first"
+}

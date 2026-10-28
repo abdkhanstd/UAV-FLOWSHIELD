@@ -1,0 +1,13 @@
+# private access to the experiment server (host, port, user, key path, GPU ids)
+scripts/remote/mata.ps1
+scripts/remote/wait_remote.sh
+scripts/remote/deploy.sh
+scripts/setup_ssh.ps1
+scripts/local_ollama.ps1
+
+# server and LaTeX logs
+results/logs/
+
+__pycache__/
+*.pyc
+*.tgz

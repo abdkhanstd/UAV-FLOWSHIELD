@@ -1,0 +1,242 @@
+[
+ {
+  "id": "F0368",
+  "method": "fs_final",
+  "success": true,
+  "fail": "ok",
+  "ticket": "approved",
+  "n_calls_new": null
+ },
+ {
+  "id": "F0368",
+  "method": "fs_final_expert",
+  "success": false,
+  "fail": "dynamic_task",
+  "ticket": "deadline",
+  "n_calls_new": null
+ },
+ {
+  "id": "F0368",
+  "method": "fs_final_habit",
+  "success": true,
+  "fail": "ok",
+  "ticket": "approved",
+  "n_calls_new": null
+ },
+ {
+  "id": "F0369",
+  "method": "fs_final",
+  "success": true,
+  "fail": "ok",
+  "ticket": "approved",
+  "n_calls_new": null
+ },
+ {
+  "id": "F0369",
+  "method": "fs_final_expert",
+  "success": true,
+  "fail": "ok",
+  "ticket": "approved",
+  "n_calls_new": null
+ },
+ {
+  "id": "F0369",
+  "method": "fs_final_habit",
+  "success": true,
+  "fail": "ok",
+  "ticket": "approved",
+  "n_calls_new": null
+ },
+ {
+  "id": "F0370",
+  "method": "fs_final",
+  "success": true,
+  "fail": "ok",
+  "ticket": "approved",
+  "n_calls_new": null
+ },
+ {
+  "id": "F0370",
+  "method": "fs_final_expert",
+  "success": true,
+  "fail": "ok",
+  "ticket": "approved",
+  "n_calls_new": null
+ },
+ {
+  "id": "F0370",
+  "method": "fs_final_habit",
+  "success": true,
+  "fail": "ok",
+  "ticket": "approved",
+  "n_calls_new": null
+ },
+ {
+  "id": "F0371",
+  "method": "fs_final",
+  "success": true,
+  "fail": "ok",
+  "ticket": "approved",
+  "n_calls_new": null
+ },
+ {
+  "id": "F0371",
+  "method": "fs_final_expert",
+  "success": true,
+  "fail": "ok",
+  "ticket": "approved",
+  "n_calls_new": null
+ },
+ {
+  "id": "F0371",
+  "method": "fs_final_habit",
+  "success": true,
+  "fail": "ok",
+  "ticket": "approved",
+  "n_calls_new": null
+ },
+ {
+  "id": "F0372",
+  "method": "fs_final",
+  "success": true,
+  "fail": "ok",
+  "ticket": "approved",
+  "n_calls_new": null
+ },
+ {
+  "id": "F0372",
+  "method": "fs_final_expert",
+  "success": false,
+  "fail": "dynamic_task",
+  "ticket": "deadline",
+  "n_calls_new": null
+ },
+ {
+  "id": "F0372",
+  "method": "fs_final_habit",
+  "success": true,
+  "fail": "ok",
+  "ticket": "approved",
+  "n_calls_new": null
+ },
+ {
+  "id": "F0373",
+  "method": "fs_final",
+  "success": true,
+  "fail": "ok",
+  "ticket": "approved",
+  "n_calls_new": null
+ },
+ {
+  "id": "F0373",
+  "method": "fs_final_expert",
+  "success": true,
+  "fail": "ok",
+  "ticket": "approved",
+  "n_calls_new": null
+ },
+ {
+  "id": "F0373",
+  "method": "fs_final_habit",
+  "success": true,
+  "fail": "ok",
+  "ticket": "approved",
+  "n_calls_new": null
+ },
+ {
+  "id": "F0374",
+  "method": "fs_final",
+  "success": false,
+  "fail": "dynamic_task",
+  "ticket": "no_approval",
+  "n_calls_new": null
+ },
+ {
+  "id": "F0374",
+  "method": "fs_final_expert",
+  "success": true,
+  "fail": "ok",
+  "ticket": "approved",
+  "n_calls_new": null
+ },
+ {
+  "id": "F0374",
+  "method": "fs_final_habit",
+  "success": true,
+  "fail": "ok",
+  "ticket": "approved",
+  "n_calls_new": null
+ },
+ {
+  "id": "F0375",
+  "method": "fs_final",
+  "success": true,
+  "fail": "ok",
+  "ticket": "approved",
+  "n_calls_new": null
+ },
+ {
+  "id": "F0375",
+  "method": "fs_final_expert",
+  "success": true,
+  "fail": "ok",
+  "ticket": "approved",
+  "n_calls_new": null
+ },
+ {
+  "id": "F0375",
+  "method": "fs_final_habit",
+  "success": true,
+  "fail": "ok",
+  "ticket": "approved",
+  "n_calls_new": null
+ },
+ {
+  "id": "F0376",
+  "method": "fs_final",
+  "success": true,
+  "fail": "ok",
+  "ticket": "approved",
+  "n_calls_new": null
+ },
+ {
+  "id": "F0376",
+  "method": "fs_final_expert",
+  "success": true,
+  "fail": "ok",
+  "ticket": "approved",
+  "n_calls_new": null
+ },
+ {
+  "id": "F0376",
+  "method": "fs_final_habit",
+  "success": true,
+  "fail": "ok",
+  "ticket": "approved",
+  "n_calls_new": null
+ },
+ {
+  "id": "F0377",
+  "method": "fs_final",
+  "success": false,
+  "fail": "dynamic_task",
+  "ticket": "deadline",
+  "n_calls_new": null
+ },
+ {
+  "id": "F0377",
+  "method": "fs_final_expert",
+  "success": false,
+  "fail": "dynamic_task",
+  "ticket": "deadline",
+  "n_calls_new": null
+ },
+ {
+  "id": "F0377",
+  "method": "fs_final_habit",
+  "success": true,
+  "fail": "ok",
+  "ticket": "approved",
+  "n_calls_new": null
+ }
+]
