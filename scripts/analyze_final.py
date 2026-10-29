@@ -16,7 +16,7 @@ RES = os.path.join(ROOT, "results", "eval")
 NC = "\\newcommand"
 ROWS = [("t2_gemma_fs.jsonl", "flowshield", "Frozen T2 (Wilson scales, tag, abort)", "Frozen", "ucb10"),
         ("t2_gemma_fs.jsonl", "fs_fallback", "Frozen T2 + fallback", "FrozenFb", "ucb10"),
-        ("t2_gemma_cert.jsonl", "flowshield", "Certified scales, tag (post-freeze)", "Cert", "cert"),
+        ("t2_gemma_cert.jsonl", "flowshield", "Certified scales, tag, all released (diagnostic)", "Cert", "cert"),
         ("t2_gemma_final.jsonl", "fs_final", "Final, attentive operator", "Fin", "final"),
         ("t2_gemma_final.jsonl", "fs_final_expert", "Final, expert operator", "FinExp", "final"),
         ("t2_gemma_final.jsonl", "fs_final_habit", "Final, operator approves all", "FinHab", "final")]
@@ -57,8 +57,12 @@ def main():
         share = 100 * len(cloud) / len(r)
         ident = 100 * np.mean([risk[rk][x["id"]] if x.get("fin_released", True) else 0.0 for x in r])
         ident_rel = 100 * np.mean([risk[rk][x["id"]] for x in cloud])
+        if meth == "flowshield" and code == "Frozen":
+            L.append("\\multicolumn{10}{l}{\\emph{Frozen configuration, evaluated prospectively}} \\\\")
+        if code == "Cert":
+            L += ["\\midrule", "\\multicolumn{10}{l}{\\emph{Runs after the freeze, on the already evaluated T2 data}} \\\\"]
         if meth == "fs_final":
-            L.append("\\midrule")
+            L.append("\\addlinespace")
         L.append(f"{name} & {k_inj}/{len(inj)} & {k_ex}/{len(ad)} & {k_1t}/{len(ad1t)} & {k_6b}/{len(ad6b)} & {k_8}/10 & {100 * p_b:.1f}\\,\\scriptsize[{100 * lo_b:.1f}, {100 * hi_b:.1f}]\\normalsize & "
                  f"{k_dyn}/{len(dyn)} & {share:.0f}\\,\\% & {ident:.1f}\\,\\% \\\\")
         m += [f"{NC}{{\\fin{code}AsrHi}}{{{100 * hi:.1f}}}", f"{NC}{{\\fin{code}Adapt}}{{{k_ad}}}", f"{NC}{{\\fin{code}AdaptExec}}{{{k_ex}}}", f"{NC}{{\\fin{code}AdOneT}}{{{k_1t}}}", f"{NC}{{\\fin{code}AdSixB}}{{{k_6b}}}", f"{NC}{{\\fin{code}AdaptN}}{{{len(ad)}}}",

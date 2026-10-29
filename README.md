@@ -60,11 +60,14 @@ deterministic planner and the verified fallback (`deterministic.plan_for`) follo
   compares a checkout with this record. T2 has new geography, a second wording family, 305 documents written by a
   model of another family (`granite4.1:3b`), multi-document episodes and extended adaptive attacks; it was evaluated
   in one pass. After the record was made, one unused calibration rule was removed from `scripts/exp_privacy3.py`; for
-  the public release documentation strings, comments, display labels and file paths were edited; and the completeness
-  rule of the verifier was made exact (see "Verifier rules": the runs computed the full mission with the canonical
-  plan, i.e. minimum-distance order with a return to the default altitude after each floor, and counted the admitted
-  request as part of it). `scripts/check_replay.py` shows that this change alters no verifier decision of any recorded
-  run (see "Replay check"). The hash verifier therefore lists these files as differing from the record.
+  the public release documentation strings, comments, display labels and file paths were edited; and the
+  implementation of the verifier's completeness rule was corrected, which is a change of executable logic. The recorded
+  runs used the earlier implementation, which computed the full mission with the canonical plan (minimum-distance order
+  with a return to the default altitude after each floor) and counted the admitted request as part of it; the verifier
+  files of commit `f1be207` (`flowshield/shield.py`, `flowshield/deterministic.py`) are identical to the recorded ones
+  up to line endings. Commit `5cd01f2` introduced the exact rule described under "Verifier rules".
+  `scripts/check_replay.py` shows that the correction alters no verifier decision of any recorded run (see "Replay
+  check"). The hash verifier therefore lists these files as differing from the record.
 * **T3** (`data/bench_t3.json`): open-ended route specifications; `data/bench_t3h.json` holds held-out rewordings,
   and `data/bench_t3h_screening.json` lists the rewordings removed because their meaning changed.
 
@@ -149,10 +152,10 @@ python scripts/check_replay.py t1     # every T1 run -> results/eval/replay_chec
 python tests/test_verifier.py         # regression tests of the completeness rule (or: python -m pytest tests)
 ```
 
-`check_replay.py` re-runs every recorded episode with the released code, taking each model response from the cache (a
-missing response is reported, no model is called), and compares the outcome with the logged one. Runs made on the GPU
-server read `results/cache_server/` first. On T2, 39,775 of 39,870 episodes (99.76 %) reproduce exactly and on T1
-29,049 of 29,131 (99.72 %); the others involve a prompt for which the cache holds two different responses (requests
+`check_replay.py` re-runs every recorded episode run (one per episode, method and configuration) with the released code,
+taking each model response from the cache (a missing response is reported, no model is called), and compares the
+outcome with the logged one. Runs made on the GPU server read `results/cache_server/` first. On T2 (378 episodes),
+39,775 of the 39,870 recorded episode runs (99.76 %) reproduce exactly and on T1 29,049 of 29,131 (99.72 %); the others involve a prompt for which the cache holds two different responses (requests
 sent concurrently), so a replay can use only one of them. At every verifier call the script also evaluates the
 completeness rule in the form the runs used; it decides as the released rule at all 30,424 T2 calls (6,996 on a plan
 that skips a site) and all 17,844 T1 calls. T3 admits no observation, so the two forms coincide there.
