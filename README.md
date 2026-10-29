@@ -21,7 +21,7 @@ flowshield/            library
   prompts.py           prompt builders of every method (two versions of the T3 extractor prompt)
   methods.py           baselines: Prompt-RAG-Validator, EAMSR, MCP-PEP; shared checker; delegation rule
   shield.py            FlowShield: private view, admission (channel authority, origin tag, router-metric
-                       envelope), resolver, verifier, canonical plan
+                       envelope), resolver, verifier, canonical and minimum-energy plans
   deterministic.py     reference planners without a language model (basic and extended parser, exact tour, same verifier)
   pipeline.py          one episode through one method (language-model calls, execution, judging)
   pipeline_cb.py       baselines behind the common trusted boundary
@@ -33,10 +33,23 @@ flowshield/            library
   llm.py               Ollama client with on-disk cache and load-aware routing
 scripts/               experiments, analysis and figures (see below)
 scripts/remote/        helpers for running the experiments on a second GPU server
+tests/                 regression tests of the verifier's completeness rule
 data/                  benchmarks (bench.json = T1, bench_t2.json = T2, bench_t3.json, bench_t3h.json), noise scales
-results/               raw per-episode results (jsonl) and summaries (json)
+results/               raw per-episode results (jsonl), summaries (json) and the language-model caches
+results/cache_server/  language-model caches of the runs made on the GPU server (see "Replay check")
 results/eval/          runs on T1, T2 and T3; FROZEN.json holds the hashes recorded before T2 was evaluated
 ```
+
+## Verifier rules
+
+The verifier (`flowshield/shield.py`, `verify_plan`) accepts a plan that omits a site only if the site is the unique
+lowest-priority site and even the minimum-energy mission over all sites (required cameras, admitted altitude floors)
+exceeds the budget. The minimum is exact: climbs are charged and descents are free, so climbing only where a floor
+requires it gives the least climb in every visiting order, and the tour is an exact Held-Karp search in the router's
+metric (`min_energy_plan`). An admitted spatial request is a permission, not an obligation: at most one loiter, only at
+its handle, clamped to its duration; a plan that omits it verifies and the omission counts as a failed dynamic task in
+the mission-success judge. The request is not part of the full mission, so it can never make a site skippable. The
+deterministic planner and the verified fallback (`deterministic.plan_for`) follow the same order of preference.
 
 ## Benchmarks
 
@@ -46,9 +59,12 @@ results/eval/          runs on T1, T2 and T3; FROZEN.json holds the hashes recor
   every pipeline source and of both benchmarks in `results/eval/FROZEN.json`, and `scripts/remote/verify_frozen.py`
   compares a checkout with this record. T2 has new geography, a second wording family, 305 documents written by a
   model of another family (`granite4.1:3b`), multi-document episodes and extended adaptive attacks; it was evaluated
-  in one pass. After the record was made, one unused calibration rule was removed from `scripts/exp_privacy3.py`, and
-  for the public release documentation strings, comments, display labels and file paths were edited; no executable
-  logic of the evaluated pipeline changed. The verifier therefore lists these files as differing from the record.
+  in one pass. After the record was made, one unused calibration rule was removed from `scripts/exp_privacy3.py`; for
+  the public release documentation strings, comments, display labels and file paths were edited; and the completeness
+  rule of the verifier was made exact (see "Verifier rules": the runs computed the full mission with the canonical
+  plan, i.e. minimum-distance order with a return to the default altitude after each floor, and counted the admitted
+  request as part of it). `scripts/check_replay.py` shows that this change alters no verifier decision of any recorded
+  run (see "Replay check"). The hash verifier therefore lists these files as differing from the record.
 * **T3** (`data/bench_t3.json`): open-ended route specifications; `data/bench_t3h.json` holds held-out rewordings,
   and `data/bench_t3h_screening.json` lists the rewordings removed because their meaning changed.
 
@@ -124,6 +140,22 @@ python scripts/run_final.py run --model gemma4:12b --bench data/bench_t2.json --
 
 `bash scripts/analyze_all.sh` regenerates every table, figure and number of the paper from the raw results (written to
 `../paper/auto` and `../paper/figs`); no model is needed, because every language-model call is cached by prompt hash.
+
+### Replay check
+
+```bash
+python scripts/check_replay.py        # every T2 run -> results/eval/replay_check.json
+python scripts/check_replay.py t1     # every T1 run -> results/eval/replay_check_t1.json
+python tests/test_verifier.py         # regression tests of the completeness rule (or: python -m pytest tests)
+```
+
+`check_replay.py` re-runs every recorded episode with the released code, taking each model response from the cache (a
+missing response is reported, no model is called), and compares the outcome with the logged one. Runs made on the GPU
+server read `results/cache_server/` first. On T2, 39,775 of 39,870 episodes (99.76 %) reproduce exactly and on T1
+29,049 of 29,131 (99.72 %); the others involve a prompt for which the cache holds two different responses (requests
+sent concurrently), so a replay can use only one of them. At every verifier call the script also evaluates the
+completeness rule in the form the runs used; it decides as the released rule at all 30,424 T2 calls (6,996 on a plan
+that skips a site) and all 17,844 T1 calls. T3 admits no observation, so the two forms coincide there.
 The main analysis of T1 and T2 is `scripts/analyze_eval.py`; `scripts/eval_common.py` holds the loaders and method
 labels that the other analysis scripts share. `scripts/fig_compact.py` draws the small figures of the main paper.
 

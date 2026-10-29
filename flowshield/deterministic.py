@@ -141,17 +141,23 @@ def merge_extractions(*results):
 
 
 def plan_for(ep, obs, D):
-    """Exact tour; drop the lowest-priority site only if the full mission does not fit the budget."""
+    """Deterministic plan under the verifier's completeness rule. Candidates in order: all sites with the admitted request,
+    all sites without it, and, only if no mission over all sites fits, all sites except the unique low-priority one (with,
+    then without, the request). For each candidate the canonical plan (minimum-distance order, loiter after its qualifying
+    site) is tried first and the minimum-energy plan second; the first that fits the budget is returned."""
     from .executor import execute
     k = len(ep["sites"])
     full = list(range(1, k + 1))
     low = [i for i, s in enumerate(ep["sites"]) if s["priority"] == "low"]
-    for sub in [full] + [[i for i in full if i - 1 != j] for j in low]:
-        plan = SH.canonical_plan(ep, obs, sub)
-        plan.insert(len(plan) - 1, {"op": "send", "to": "client_portal", "text": "Mission complete."})
-        acts, errs = SH.resolve_shield(ep, plan, obs)
-        if not errs and execute(ep, acts)["energy"] <= ep["budget_m"] + 1e-6:
-            return plan
+    subsets = [full] + ([[i for i in full if i - 1 != low[0]]] if len(low) == 1 else [])
+    no_req = [o for o in obs if o["kind"] != "inspection_request"]
+    for sub in subsets:
+        for with_req in ([True, False] if len(no_req) < len(obs) else [True]):
+            for plan in (SH.canonical_plan(ep, obs if with_req else no_req, sub), SH.min_energy_plan(ep, obs, sub, with_req)):
+                plan.insert(len(plan) - 1, {"op": "send", "to": "client_portal", "text": "Mission complete."})
+                acts, errs = SH.resolve_shield(ep, plan, obs)
+                if not errs and execute(ep, acts)["energy"] <= ep["budget_m"] + 1e-6:
+                    return plan
     return None
 
 

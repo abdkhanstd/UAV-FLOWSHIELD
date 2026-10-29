@@ -193,7 +193,8 @@ def check_obs(ep, obs, docs):
 
 
 def check_bound(ep, obs):
-    """Property P2': an admitted request raises the cheapest full mission by at most 2*rho + 8*T (router metric)."""
+    """Property P2': an admitted request raises the canonical full mission (loiter right after its qualifying site) by at
+    most 2*rho + 8*T (router metric)."""
     sp = [o for o in obs if o["kind"] == "inspection_request"]
     if not sp:
         return

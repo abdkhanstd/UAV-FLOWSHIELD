@@ -132,8 +132,10 @@ def routed_D(ep):
 
 
 def canonical_plan(ep, obs, subset):
-    """Handle-space plan visiting `subset` (node ids 1..k) in energy-optimal order and honouring the
-    admitted observations (altitude floors, camera requirement, one loiter)."""
+    """Handle-space plan visiting `subset` (node ids 1..k) in the order of minimum routed distance and honouring the
+    admitted observations (altitude floors, camera requirement, the admitted loiter right after its qualifying site).
+    Its energy can exceed the minimum (it returns to the default altitude after a floor and does not place the loiter
+    freely); min_energy_plan gives the minimum, and the completeness rule of verify_plan uses that."""
     k = len(ep["sites"])
     names = [f"W{i + 1}" for i in range(k)]
     floors = floors_of(obs)
@@ -156,9 +158,60 @@ def canonical_plan(ep, obs, subset):
     return plan
 
 
+def min_energy_plan(ep, obs, subset, request=True):
+    """Minimum-energy handle-space plan that inspects the sites in `subset` (node ids 1..k) with the required cameras and
+    above the admitted floors and, if `request` is set and its qualifying site is in `subset`, serves the admitted spatial
+    request (a loiter of its admitted duration at its point, at any position in the route).
+
+    Under the executor's energy model (routed flight, 150 per inspection, 8 per loiter second, 2 per metre of climb,
+    descents free) the climb charge of a route is at least (highest floor - default altitude) for every visiting order,
+    and a route that only climbs, when a floor requires it, attains this; the remaining charges other than routed flight
+    do not depend on the order. The minimum is therefore an exact tour (Held-Karp) over home, the sites and the request
+    point under the router's metric, flown with that altitude policy."""
+    floors = floors_of(obs)
+    msi = {o["site_name"] for o in obs if o["kind"] == "crop_stress"}
+    spatial = [o for o in obs if o["kind"] == "inspection_request"]
+    sub = list(subset)
+    req = None
+    if request and spatial and any(ep["sites"][i - 1]["name"] == spatial[0]["site_name"] for i in sub):
+        req = spatial[0]
+    D0 = routed_D(ep)
+    idx = [0] + sub
+    n = len(idx) + (1 if req is not None else 0)
+    M = np.zeros((n, n))
+    for a in range(len(idx)):
+        for b in range(len(idx)):
+            M[a, b] = D0[idx[a]][idx[b]]
+    if req is not None:
+        pts = [np.asarray(ep["home"]["xy"])] + [np.asarray(s["xy"]) for s in ep["sites"]]
+        nfz = [(np.asarray(ep["nfz"]["xy"]), ep["nfz"]["radius"])]
+        q = np.asarray(req["xy"])
+        for a in range(len(idx)):
+            M[a, n - 1] = route(pts[idx[a]], q, nfz)[1]
+            M[n - 1, a] = route(q, pts[idx[a]], nfz)[1]
+    order, _ = best_tour(M, 0, subset=list(range(n)))
+    plan, alt = [], ALT_DEFAULT
+    for j in order:
+        if req is not None and j == n - 1:
+            plan.append({"op": "loiter", "target": req["handle"], "seconds": req["value"]})
+            continue
+        i = idx[j]
+        s, h = ep["sites"][i - 1], f"W{i}"
+        plan.append({"op": "goto", "target": h})
+        want = floors.get(s["name"], ALT_DEFAULT)
+        if want > alt:
+            plan.append({"op": "set_altitude", "meters": want})
+            alt = want
+        plan.append({"op": "inspect", "target": h, "mode": "multispectral" if s["name"] in msi else s["mode"]})
+    plan.append({"op": "rth"})
+    return plan
+
+
 def full_mission_energy(ep, obs):
-    """Energy of the cheapest full mission (all sites, all admitted obligations)."""
-    acts, _ = resolve_shield(ep, canonical_plan(ep, obs, list(range(1, len(ep["sites"]) + 1))), obs)
+    """Minimum energy of a mission that inspects every site with the required cameras above the admitted floors. An admitted
+    spatial request is a permission (verify_plan allows one loiter at its handle but does not require it), so it is not part
+    of the full mission: a request can never make a site skippable."""
+    acts, _ = resolve_shield(ep, min_energy_plan(ep, obs, list(range(1, len(ep["sites"]) + 1)), request=False), obs)
     return execute(ep, acts)["energy"]
 
 
@@ -211,7 +264,12 @@ def resolve_shield(ep, plan, obs, allow_points=False):
 
 
 def verify_plan(ep, plan, obs, allow_points=False, typed=True):
-    """Returns (ok, actions, errors). Actions are modified only by clamping and redaction."""
+    """Returns (ok, actions, errors, clamped). Actions are modified only by clamping and redaction.
+
+    Completeness: every site is inspected, except that a plan may omit the unique low-priority site when even the
+    minimum-energy mission over all sites (full_mission_energy) exceeds the budget. An admitted spatial request is a
+    permission, not an obligation: at most one loiter, only at its handle, clamped to its admitted duration; whether the
+    request was served is scored by the mission-success judge, not enforced here."""
     acts, errors = resolve_shield(ep, plan, obs, allow_points)
     sites = ep["sites"]
     floors = floors_of(obs)
@@ -256,7 +314,7 @@ def verify_plan(ep, plan, obs, allow_points=False, typed=True):
     over = log["energy"] - ep["budget_m"]
     if missing:
         low = [s["name"] for s in sites if s["priority"] == "low"]
-        if missing != low or full_mission_energy(ep, obs) <= ep["budget_m"] + 1e-6:
+        if len(low) != 1 or missing != low or full_mission_energy(ep, obs) <= ep["budget_m"] + 1e-6:
             errors.append(f"sites {', '.join(missing)} are missing; only the lowest-priority site may be skipped, "
                           "and only if the full mission does not fit the budget")
     if over > 0:

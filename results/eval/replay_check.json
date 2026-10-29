@@ -1,0 +1,212 @@
+{
+ "files": {
+  "t2_gemma_alt": {
+   "records": 378,
+   "miss": 0,
+   "reproduced": 378,
+   "calls": 441,
+   "calls_missing": 51,
+   "calls_differ": 0
+  },
+  "t2_gemma_base": {
+   "records": 5888,
+   "miss": 1,
+   "reproduced": 5880,
+   "calls": 736,
+   "calls_missing": 80,
+   "calls_differ": 0
+  },
+  "t2_gemma_cb": {
+   "records": 2208,
+   "miss": 0,
+   "reproduced": 2208,
+   "calls": 3210,
+   "calls_missing": 371,
+   "calls_differ": 0
+  },
+  "t2_gemma_cert": {
+   "records": 378,
+   "miss": 0,
+   "reproduced": 378,
+   "calls": 443,
+   "calls_missing": 51,
+   "calls_differ": 0
+  },
+  "t2_gemma_edge_granite4.1_3b": {
+   "records": 378,
+   "miss": 0,
+   "reproduced": 374,
+   "calls": 447,
+   "calls_missing": 53,
+   "calls_differ": 0
+  },
+  "t2_gemma_edge_nemotron-3-nano_4b": {
+   "records": 378,
+   "miss": 0,
+   "reproduced": 378,
+   "calls": 449,
+   "calls_missing": 57,
+   "calls_differ": 0
+  },
+  "t2_gemma_edge_qwen3_1.7b": {
+   "records": 378,
+   "miss": 0,
+   "reproduced": 378,
+   "calls": 440,
+   "calls_missing": 51,
+   "calls_differ": 0
+  },
+  "t2_gemma_edge_qwen3_8b": {
+   "records": 378,
+   "miss": 0,
+   "reproduced": 378,
+   "calls": 448,
+   "calls_missing": 56,
+   "calls_differ": 0
+  },
+  "t2_gemma_final": {
+   "records": 1134,
+   "miss": 0,
+   "reproduced": 1134,
+   "calls": 1347,
+   "calls_missing": 165,
+   "calls_differ": 0
+  },
+  "t2_gemma_fixed": {
+   "records": 640,
+   "miss": 0,
+   "reproduced": 640,
+   "calls": 821,
+   "calls_missing": 146,
+   "calls_differ": 0
+  },
+  "t2_gemma_fs": {
+   "records": 4914,
+   "miss": 3,
+   "reproduced": 4903,
+   "calls": 4980,
+   "calls_missing": 627,
+   "calls_differ": 0
+  },
+  "t2_gemma_mean05": {
+   "records": 756,
+   "miss": 0,
+   "reproduced": 752,
+   "calls": 909,
+   "calls_missing": 103,
+   "calls_differ": 0
+  },
+  "t2_gemma_net0.1": {
+   "records": 320,
+   "miss": 0,
+   "reproduced": 320,
+   "calls": 415,
+   "calls_missing": 78,
+   "calls_differ": 0
+  },
+  "t2_gemma_net0.3": {
+   "records": 320,
+   "miss": 0,
+   "reproduced": 320,
+   "calls": 407,
+   "calls_missing": 74,
+   "calls_differ": 0
+  },
+  "t2_gemma_net0.5": {
+   "records": 320,
+   "miss": 0,
+   "reproduced": 320,
+   "calls": 381,
+   "calls_missing": 70,
+   "calls_differ": 0
+  },
+  "t2_gemma_net1.0": {
+   "records": 320,
+   "miss": 0,
+   "reproduced": 320,
+   "calls": 160,
+   "calls_missing": 30,
+   "calls_differ": 0
+  },
+  "t2_granite4.1_3b": {
+   "records": 2596,
+   "miss": 3,
+   "reproduced": 2580,
+   "calls": 2231,
+   "calls_missing": 1148,
+   "calls_differ": 0
+  },
+  "t2_nemotron-3-nano_4b": {
+   "records": 2596,
+   "miss": 0,
+   "reproduced": 2587,
+   "calls": 1884,
+   "calls_missing": 431,
+   "calls_differ": 0
+  },
+  "t2_qwen3_1.7b": {
+   "records": 2596,
+   "miss": 2,
+   "reproduced": 2584,
+   "calls": 2255,
+   "calls_missing": 1556,
+   "calls_differ": 0
+  },
+  "t2_qwen_base": {
+   "records": 5888,
+   "miss": 2,
+   "reproduced": 5871,
+   "calls": 736,
+   "calls_missing": 80,
+   "calls_differ": 0
+  },
+  "t2_qwen_fs": {
+   "records": 4914,
+   "miss": 2,
+   "reproduced": 4908,
+   "calls": 6616,
+   "calls_missing": 1620,
+   "calls_differ": 0
+  },
+  "t2_samp_s0": {
+   "records": 548,
+   "miss": 0,
+   "reproduced": 547,
+   "calls": 166,
+   "calls_missing": 25,
+   "calls_differ": 0
+  },
+  "t2_samp_s1": {
+   "records": 548,
+   "miss": 1,
+   "reproduced": 543,
+   "calls": 169,
+   "calls_missing": 28,
+   "calls_differ": 0
+  },
+  "t2_samp_s2": {
+   "records": 548,
+   "miss": 0,
+   "reproduced": 547,
+   "calls": 169,
+   "calls_missing": 23,
+   "calls_differ": 0
+  },
+  "t2_samp_s3": {
+   "records": 548,
+   "miss": 0,
+   "reproduced": 547,
+   "calls": 164,
+   "calls_missing": 22,
+   "calls_differ": 0
+  }
+ },
+ "total": {
+  "records": 39870,
+  "miss": 14,
+  "reproduced": 39775,
+  "calls": 30424,
+  "calls_missing": 6996,
+  "calls_differ": 0
+ }
+}

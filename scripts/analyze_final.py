@@ -30,15 +30,18 @@ def risk_tables():
 
 def main():
     risk = risk_tables()
-    L = ["\\begin{tabular}{lcccccccc}", "\\toprule",
-         "Configuration & Inj. & Adapt. exec. & AD1t & AD8 lost & Benign (\\%) & Dyn. & Cloud & Site id. \\\\",
+    L = ["\\begin{tabular}{lccccccccc}", "\\toprule",
+         "Configuration & Inj. & Adapt. exec. & AD1t & AD6b & AD8 lost & Benign (\\%) & Dyn. & Cloud & Site id. \\\\",
          "\\midrule"]
     m = []
     for f, meth, name, code, rk in ROWS:
         rows = [json.loads(l) for l in open(os.path.join(RES, f))]
         r = [x for x in rows if x["method"] == meth]
         inj = [x for x in r if x["category"] == "attack"]
-        ad = [x for x in r if x["category"] == "adaptive" and x["goal"] != "AD4"]
+        # integrity attacks: AD1-AD8 without AD4 (private view only) and AD6b (availability), as in the main T2 table
+        ad = [x for x in r if x["category"] == "adaptive" and x["goal"] not in ("AD4", "AD6b")]
+        ad6b = [x for x in r if x["category"] == "adaptive" and x["goal"] == "AD6b"]
+        k_6b = sum(x["attack_success"] for x in ad6b)      # AD6b success: the legitimate tight-budget mission does not complete
         ad1t = [x for x in ad if x["goal"] == "AD1t"]
         ben = [x for x in r if x["category"].startswith("benign")]
         dyn = [x for x in r if x["category"] == "benign_dynamic"]
@@ -56,9 +59,9 @@ def main():
         ident_rel = 100 * np.mean([risk[rk][x["id"]] for x in cloud])
         if meth == "fs_final":
             L.append("\\midrule")
-        L.append(f"{name} & {k_inj}/{len(inj)} & {k_ex}/{len(ad)} & {k_1t}/{len(ad1t)} & {k_8}/10 & {100 * p_b:.1f}\\,\\scriptsize[{100 * lo_b:.1f}, {100 * hi_b:.1f}]\\normalsize & "
+        L.append(f"{name} & {k_inj}/{len(inj)} & {k_ex}/{len(ad)} & {k_1t}/{len(ad1t)} & {k_6b}/{len(ad6b)} & {k_8}/10 & {100 * p_b:.1f}\\,\\scriptsize[{100 * lo_b:.1f}, {100 * hi_b:.1f}]\\normalsize & "
                  f"{k_dyn}/{len(dyn)} & {share:.0f}\\,\\% & {ident:.1f}\\,\\% \\\\")
-        m += [f"{NC}{{\\fin{code}AsrHi}}{{{100 * hi:.1f}}}", f"{NC}{{\\fin{code}Adapt}}{{{k_ad}}}", f"{NC}{{\\fin{code}AdaptExec}}{{{k_ex}}}", f"{NC}{{\\fin{code}AdOneT}}{{{k_1t}}}",
+        m += [f"{NC}{{\\fin{code}AsrHi}}{{{100 * hi:.1f}}}", f"{NC}{{\\fin{code}Adapt}}{{{k_ad}}}", f"{NC}{{\\fin{code}AdaptExec}}{{{k_ex}}}", f"{NC}{{\\fin{code}AdOneT}}{{{k_1t}}}", f"{NC}{{\\fin{code}AdSixB}}{{{k_6b}}}", f"{NC}{{\\fin{code}AdaptN}}{{{len(ad)}}}",
               f"{NC}{{\\fin{code}Mcr}}{{{100 * p_b:.1f}}}", f"{NC}{{\\fin{code}Dyn}}{{{k_dyn}}}", f"{NC}{{\\fin{code}Cloud}}{{{share:.1f}}}",
               f"{NC}{{\\fin{code}Ident}}{{{ident:.1f}}}", f"{NC}{{\\fin{code}IdentRel}}{{{ident_rel:.1f}}}",
               f"{NC}{{\\fin{code}AdEight}}{{{sum(x['attack_success'] for x in ad if x['goal'] == 'AD8')}}}"]

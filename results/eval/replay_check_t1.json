@@ -1,0 +1,148 @@
+{
+ "files": {
+  "t1_gemma_base": {
+   "records": 4368,
+   "miss": 0,
+   "reproduced": 4365,
+   "calls": 546,
+   "calls_missing": 60,
+   "calls_differ": 0
+  },
+  "t1_gemma_fs_mean05": {
+   "records": 576,
+   "miss": 0,
+   "reproduced": 573,
+   "calls": 671,
+   "calls_missing": 66,
+   "calls_differ": 0
+  },
+  "t1_gemma_fs_mean10": {
+   "records": 3744,
+   "miss": 0,
+   "reproduced": 3744,
+   "calls": 3657,
+   "calls_missing": 370,
+   "calls_differ": 0
+  },
+  "t1_gemma_fs_ucb": {
+   "records": 576,
+   "miss": 0,
+   "reproduced": 574,
+   "calls": 669,
+   "calls_missing": 64,
+   "calls_differ": 0
+  },
+  "t1_qwen_base": {
+   "records": 4368,
+   "miss": 0,
+   "reproduced": 4367,
+   "calls": 546,
+   "calls_missing": 60,
+   "calls_differ": 0
+  },
+  "t1_qwen_fs_mean05": {
+   "records": 576,
+   "miss": 0,
+   "reproduced": 572,
+   "calls": 966,
+   "calls_missing": 277,
+   "calls_differ": 0
+  },
+  "t1_qwen_fs_mean10": {
+   "records": 3744,
+   "miss": 0,
+   "reproduced": 3743,
+   "calls": 4876,
+   "calls_missing": 1377,
+   "calls_differ": 0
+  },
+  "t1_qwen_fs_ucb": {
+   "records": 576,
+   "miss": 0,
+   "reproduced": 572,
+   "calls": 962,
+   "calls_missing": 271,
+   "calls_differ": 0
+  },
+  "main_gemma4-12b": {
+   "records": 2199,
+   "miss": 0,
+   "reproduced": 2189,
+   "calls": 600,
+   "calls_missing": 61,
+   "calls_differ": 0
+  },
+  "main_qwen3-8b": {
+   "records": 2199,
+   "miss": 0,
+   "reproduced": 2189,
+   "calls": 705,
+   "calls_missing": 158,
+   "calls_differ": 0
+  },
+  "abl_gemma4-12b": {
+   "records": 876,
+   "miss": 0,
+   "reproduced": 867,
+   "calls": 687,
+   "calls_missing": 79,
+   "calls_differ": 0
+  },
+  "abl_qwen3-8b": {
+   "records": 730,
+   "miss": 0,
+   "reproduced": 721,
+   "calls": 894,
+   "calls_missing": 238,
+   "calls_differ": 0
+  },
+  "trade_gemma4-12b": {
+   "records": 720,
+   "miss": 0,
+   "reproduced": 719,
+   "calls": 950,
+   "calls_missing": 229,
+   "calls_differ": 0
+  },
+  "samp_gemma4-12b_s1": {
+   "records": 560,
+   "miss": 3,
+   "reproduced": 556,
+   "calls": 171,
+   "calls_missing": 26,
+   "calls_differ": 0
+  },
+  "samp_gemma4-12b_s2": {
+   "records": 560,
+   "miss": 3,
+   "reproduced": 555,
+   "calls": 170,
+   "calls_missing": 25,
+   "calls_differ": 0
+  },
+  "samp_gemma4-12b_s3": {
+   "records": 560,
+   "miss": 3,
+   "reproduced": 556,
+   "calls": 170,
+   "calls_missing": 24,
+   "calls_differ": 0
+  },
+  "para_gemma4-12b": {
+   "records": 2199,
+   "miss": 5,
+   "reproduced": 2187,
+   "calls": 604,
+   "calls_missing": 79,
+   "calls_differ": 0
+  }
+ },
+ "total": {
+  "records": 29131,
+  "miss": 14,
+  "reproduced": 29049,
+  "calls": 17844,
+  "calls_missing": 3464,
+  "calls_differ": 0
+ }
+}
