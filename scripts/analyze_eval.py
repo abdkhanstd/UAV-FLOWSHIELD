@@ -26,7 +26,7 @@ LABEL = {
     "fs_noauthority": "FlowShield w/o channel-authority table", "fs_fallback": "FlowShield + verified fallback",
     "fs_detx": "FlowShield, parser extractor", "fs_hybrid": "FlowShield, hybrid extractor",
     "fs_no_view": "FlowShield w/o private view", "fs_no_view_euclid": "FlowShield w/o private view, straight-line distances",
-    "fs_no_typed": "FlowShield w/o typed observations", "fs_no_envelope": "FlowShield w/o envelope",
+    "fs_no_typed": "FlowShield w/o typed observations", "fs_no_envelope": "FlowShield w/o spatial requests",
     "fs_no_verifier": "FlowShield w/o verifier", "fs_raw_noverifier": "FlowShield w/o typed observations and verifier",
 }
 CODE = {

@@ -1,0 +1,18 @@
+{
+ "t2_gemma_fs": {
+  "plans_with_loiter": 156,
+  "after_site": 150,
+  "attack_episodes": 38,
+  "max_loiter_cost": 2137.5,
+  "loiter_cost_above_2560": 0,
+  "max_vs_minimum": 9635.3
+ },
+ "t2_gemma_final": {
+  "plans_with_loiter": 189,
+  "after_site": 181,
+  "attack_episodes": 37,
+  "max_loiter_cost": 2137.5,
+  "loiter_cost_above_2560": 0,
+  "max_vs_minimum": 8095.3
+ }
+}

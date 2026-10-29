@@ -149,6 +149,7 @@ python scripts/run_final.py run --model gemma4:12b --bench data/bench_t2.json --
 ```bash
 python scripts/check_replay.py        # every T2 run -> results/eval/replay_check.json
 python scripts/check_replay.py t1     # every T1 run -> results/eval/replay_check_t1.json
+python scripts/check_diversion.py     # energy that admitted requests added to executed plans -> results/eval/diversion_check.json
 python tests/test_verifier.py         # regression tests of the completeness rule (or: python -m pytest tests)
 ```
 
@@ -159,6 +160,12 @@ outcome with the logged one. Runs made on the GPU server read `results/cache_ser
 sent concurrently), so a replay can use only one of them. At every verifier call the script also evaluates the
 completeness rule in the form the runs used; it decides as the released rule at all 30,424 T2 calls (6,996 on a plan
 that skips a site) and all 17,844 T1 calls. T3 admits no observation, so the two forms coincide there.
+
+`check_diversion.py` replays the frozen and the final configuration on T2 in the same way and measures, for every
+executed plan that contains a loiter at an admitted request, the energy the loiter added to that route (at most 2,138
+metre-equivalents in all 156 and 189 such plans, within the 2,560 bound of the canonical insertion) and the gap to the
+cheapest mission over the same sites without the request (up to 9,635, which includes the suboptimality of the planner's
+tour on the noisy view and is limited only by the budget check).
 The main analysis of T1 and T2 is `scripts/analyze_eval.py`; `scripts/eval_common.py` holds the loaders and method
 labels that the other analysis scripts share. `scripts/fig_compact.py` draws the small figures of the main paper.
 
