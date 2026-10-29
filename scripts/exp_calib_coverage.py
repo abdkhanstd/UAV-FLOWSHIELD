@@ -67,7 +67,8 @@ def task(args):
             r = select_scale(draw, grid, rho, rule, rng, T=T, mission_level=ml, start=TABLE[rec["area"].split("_")[0]])
             tr = (truth_m if ml else truth)[r["scale"]]
             viol += bool(r["passed"] and tr > rho)         # a claim of safety at a scale whose true risk is too high
-            unc += not r["passed"]                          # no scale passed: no claim (the largest scale is released)
+            unc += not r["passed"]                          # no scale passed: no claim (operationally planned on the
+            #                                                 edge; the largest scale enters the mean scale for evaluation only)
             scales.append(r["scale"])
             draws.append(r["draws"])
             if "table" in r:

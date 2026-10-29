@@ -67,7 +67,8 @@ deterministic planner and the verified fallback (`deterministic.plan_for`) follo
   files of commit `f1be207` (`flowshield/shield.py`, `flowshield/deterministic.py`) are identical to the recorded ones
   up to line endings. Commit `5cd01f2` introduced the exact rule described under "Verifier rules".
   `scripts/check_replay.py` shows that the correction alters no verifier decision of any recorded run (see "Replay
-  check"). The hash verifier therefore lists these files as differing from the record.
+  check"). The hash verifier therefore lists these files as differing from the record. The supplementary material
+  states the same in Section S2.4 ("Form of the completeness rule in the recorded runs").
 * **T3** (`data/bench_t3.json`): open-ended route specifications; `data/bench_t3h.json` holds held-out rewordings,
   and `data/bench_t3h_screening.json` lists the rewordings removed because their meaning changed.
 
@@ -160,6 +161,11 @@ outcome with the logged one. Runs made on the GPU server read `results/cache_ser
 sent concurrently), so a replay can use only one of them. At every verifier call the script also evaluates the
 completeness rule in the form the runs used; it decides as the released rule at all 30,424 T2 calls (6,996 on a plan
 that skips a site) and all 17,844 T1 calls. T3 admits no observation, so the two forms coincide there.
+
+A replay reads recorded responses; it is a cache lookup, not a new inference. A new inference at temperature 0 is not
+bit-identical across machines and Ollama versions (on 142 repeated episode and method pairs, two machines gave the
+same decision in 97.2 % of the cases), which is why every table was produced on a single machine. The final
+configuration (`run_final.py`) likewise reuses the recorded response of any prompt that an earlier run already sent.
 
 `check_diversion.py` replays the frozen and the final configuration on T2 in the same way and measures, for every
 executed plan that contains a loiter at an admitted request, the energy the loiter added to that route (at most 2,138
